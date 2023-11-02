@@ -14602,7 +14602,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Our topic focuses on finding the relationship between how crowded golf courses may be and weather as the weather may influence the amount of people going to the golf course. We do this by analyzing the dataset Golf Play Dataset Extended created by Samy Baladram. More specifically, we want to find out the relationship between crowdedness and weather in two seasons (temperature in winter and humidity in summer). </p><p>This raises our predictive question we want to answer with regression: finding a specific value for crowdedness after predicting with temperature in winter and humidity in summer. The dataset we use provides extended golf-related information, including weather condition, humidity, temperature, seasons, time, and crowdedness. As assessed by Kaggle, the usability for this dataset is 10 out of 10, which suggests its great compatibility, reliability, and completeness. This dataset is also well-documented and clean so no much further cleaning and wrangling was needed. From the abundant data this dataset provides, we are able to analyze and predict the crowdedness based on the weather in two seasons. </p>
+<p>We aim to determine the impact of weather on golf course crowdedness using Samy Baladram's "Golf Play Dataset Extended." Specifically, we analyze the correlation between crowdedness and temperature in winter, and humidity in summer. Our objective is to use regression to predict precise crowdedness levels based on these factors. The dataset offers golf-related metrics, including weather conditions, seasonality, and time, enabling us to efficiently study and predict the weather-driven crowdedness patterns in two distinct seasons.</p>
+
 </div>
 </div>
 </div>
@@ -14622,7 +14623,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
@@ -14648,7 +14649,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For our preliminary exploratory data analysis, we note that our dataset is accessible from our remote GitHub repository, ensuring easy and convenient access for further analysis. We are exploring relatively clean data, with the exception of there being empty cells which we need to filter out. </p><p>One important aspect we have identified is that the correlation we are interested in studying predominantly manifests during the winter and summer months. The crowdedness, a measure of how crowded the golf course was (ranging from 0 to 1), is affected by the low temperatures in winter and the humidity in the summer months. Therefore, our analysis will focus on these specific periods to draw meaningful insights. By limiting our analysis to these seasons, we will generate two distinct graphs, providing a clear and focused perspective on the relationship we aim to explore.</p>
+<p>In our preliminary analysis, we sourced our dataset from a GitHub repository, ensuring streamlined access. While the data is mostly clean, some empty cells require filtering. We've pinpointed that crowdedness on the golf course, quantified from 0 to 1, correlates with winter temperatures and summer humidity. Our study will, therefore, concentrate on these seasons, producing two targeted graphs to elucidate the relationships of interest.</p>
+
 </div>
 </div>
 </div>
@@ -14668,7 +14670,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dataset source: https://www.kaggle.com/datasets/samybaladram/golf-play-extended?select=golf_dataset_long_format_with_text.csv</span>
@@ -14883,7 +14885,6 @@ memory usage: 958.2+ KB
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="3.2-Clean-and-Wrangle-Data">3.2 Clean and Wrangle Data<a class="anchor-link" href="#3.2-Clean-and-Wrangle-Data">&#182;</a></h3><p>Upon preliminary inspection, we noted that our dataset is relatively clean, with all the variables being in an appropriate format for analysis. We have transformed the dataset into a tidy format, ensuring each variable is a column, each observation is a row, and each type of observational unit forms a table.</p>
-<p>However, for our specific analysis, we do not need all the columns.</p>
 </div>
 </div>
 </div>
@@ -14904,7 +14905,7 @@ memory usage: 958.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_golf_df</span> <span class="o">=</span> <span class="n">golf_df</span><span class="p">[[</span><span class="s1">'Month'</span><span class="p">,</span> <span class="s1">'Season'</span><span class="p">,</span> <span class="s1">'Temperature'</span><span class="p">,</span> <span class="s1">'Humidity'</span><span class="p">,</span> <span class="s1">'Crowdedness'</span><span class="p">]]</span>
@@ -14926,7 +14927,7 @@ memory usage: 958.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
 
 
@@ -15074,7 +15075,7 @@ memory usage: 958.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_data</span> <span class="o">=</span> <span class="n">clean_golf_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -15096,7 +15097,7 @@ memory usage: 958.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
 
 
@@ -15148,7 +15149,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">disable_max_rows</span><span class="p">()</span>
@@ -15195,23 +15196,23 @@ dtype: int64</pre>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
 
 <style>
-  #altair-viz-e9b925423ad14e5f8237efba09a9f214.vega-embed {
+  #altair-viz-d4ffa40f8ea54e59a220e22e06d84e10.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e9b925423ad14e5f8237efba09a9f214.vega-embed details,
-  #altair-viz-e9b925423ad14e5f8237efba09a9f214.vega-embed details summary {
+  #altair-viz-d4ffa40f8ea54e59a220e22e06d84e10.vega-embed details,
+  #altair-viz-d4ffa40f8ea54e59a220e22e06d84e10.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e9b925423ad14e5f8237efba09a9f214"></div>
+<div id="altair-viz-d4ffa40f8ea54e59a220e22e06d84e10"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e9b925423ad14e5f8237efba09a9f214") {
-      outputDiv = document.getElementById("altair-viz-e9b925423ad14e5f8237efba09a9f214");
+    if (outputDiv.id !== "altair-viz-d4ffa40f8ea54e59a220e22e06d84e10") {
+      outputDiv = document.getElementById("altair-viz-d4ffa40f8ea54e59a220e22e06d84e10");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -15273,23 +15274,23 @@ dtype: int64</pre>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
 
 <style>
-  #altair-viz-206ee157100e45a8ab8850f5b55ce8bb.vega-embed {
+  #altair-viz-c17a46bc1378411fac226f7992db26be.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-206ee157100e45a8ab8850f5b55ce8bb.vega-embed details,
-  #altair-viz-206ee157100e45a8ab8850f5b55ce8bb.vega-embed details summary {
+  #altair-viz-c17a46bc1378411fac226f7992db26be.vega-embed details,
+  #altair-viz-c17a46bc1378411fac226f7992db26be.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-206ee157100e45a8ab8850f5b55ce8bb"></div>
+<div id="altair-viz-c17a46bc1378411fac226f7992db26be"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-206ee157100e45a8ab8850f5b55ce8bb") {
-      outputDiv = document.getElementById("altair-viz-206ee157100e45a8ab8850f5b55ce8bb");
+    if (outputDiv.id !== "altair-viz-c17a46bc1378411fac226f7992db26be") {
+      outputDiv = document.getElementById("altair-viz-c17a46bc1378411fac226f7992db26be");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -15362,7 +15363,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">winter_months_df</span> <span class="o">=</span> <span class="n">clean_golf_df</span><span class="p">[</span><span class="n">clean_golf_df</span><span class="p">[</span><span class="s1">'Season'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Winter'</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15432,7 +15433,7 @@ dtype: int64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Output dataframes instead of arrays</span>
@@ -15508,7 +15509,7 @@ memory usage: 65.7+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[117]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">golf_winter_test</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -15682,7 +15683,7 @@ memory usage: 23.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">winter_attributes</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">'Temperature'</span><span class="p">,</span> <span class="s1">'Humidity'</span><span class="p">,</span> <span class="s1">'Crowdedness'</span><span class="p">]</span>
@@ -15715,7 +15716,7 @@ memory usage: 23.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 
 
 
@@ -15782,7 +15783,7 @@ memory usage: 23.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summer_attributes</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">'Temperature'</span><span class="p">,</span> <span class="s1">'Humidity'</span><span class="p">,</span> <span class="s1">'Crowdedness'</span><span class="p">]</span>
@@ -15815,7 +15816,7 @@ memory usage: 23.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 
 
 
@@ -15904,7 +15905,7 @@ memory usage: 23.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">winter_humidity_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">golf_winter_train</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -15930,30 +15931,30 @@ memory usage: 23.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-f3de29088be74e3cb03aa78e96389c09.vega-embed {
+  #altair-viz-6dfa78bb170442baa69b73a0a7bdf134.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f3de29088be74e3cb03aa78e96389c09.vega-embed details,
-  #altair-viz-f3de29088be74e3cb03aa78e96389c09.vega-embed details summary {
+  #altair-viz-6dfa78bb170442baa69b73a0a7bdf134.vega-embed details,
+  #altair-viz-6dfa78bb170442baa69b73a0a7bdf134.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f3de29088be74e3cb03aa78e96389c09"></div>
+<div id="altair-viz-6dfa78bb170442baa69b73a0a7bdf134"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f3de29088be74e3cb03aa78e96389c09") {
-      outputDiv = document.getElementById("altair-viz-f3de29088be74e3cb03aa78e96389c09");
+    if (outputDiv.id !== "altair-viz-6dfa78bb170442baa69b73a0a7bdf134") {
+      outputDiv = document.getElementById("altair-viz-6dfa78bb170442baa69b73a0a7bdf134");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16025,7 +16026,7 @@ memory usage: 23.2+ KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summer_humidity_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">golf_summer_train</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -16051,30 +16052,30 @@ memory usage: 23.2+ KB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-2dca8e4b078e4729819ab30039911a12.vega-embed {
+  #altair-viz-153577c31eef40d9b9d12916418bf87e.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-2dca8e4b078e4729819ab30039911a12.vega-embed details,
-  #altair-viz-2dca8e4b078e4729819ab30039911a12.vega-embed details summary {
+  #altair-viz-153577c31eef40d9b9d12916418bf87e.vega-embed details,
+  #altair-viz-153577c31eef40d9b9d12916418bf87e.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-2dca8e4b078e4729819ab30039911a12"></div>
+<div id="altair-viz-153577c31eef40d9b9d12916418bf87e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2dca8e4b078e4729819ab30039911a12") {
-      outputDiv = document.getElementById("altair-viz-2dca8e4b078e4729819ab30039911a12");
+    if (outputDiv.id !== "altair-viz-153577c31eef40d9b9d12916418bf87e") {
+      outputDiv = document.getElementById("altair-viz-153577c31eef40d9b9d12916418bf87e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16181,7 +16182,8 @@ memory usage: 23.2+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We use a regression algorithm to predict the crowdedness at a golf course on the basis of several key factors including month, season, humidity, and temperature. This model should provide valuable insights into how each of the selected factors contributes to the fluctuations in crowdedness, presumably because of the low temperatures or the humidity.</p><p>In winter, we expect a positive association between rising temperatures and increased crowdedness, suggesting people prefer playing golf in milder winter conditions. Conversely, in summer, we foresee a potential inverse relationship between humidity and crowdedness, indicating that golfers might avoid the course during more humid conditions.</p>
+<p>Using a regression algorithm, we predict golf course crowdedness based on factors like month, season, humidity, and temperature. The model aims to highlight how these factors affect crowdedness. In winter, we expect increased crowdedness with warmer temperatures, as golfers favor milder conditions. Conversely, in summer, higher humidity might lead to reduced crowdedness, suggesting golfers avoid humid conditions.</p>
+
 </div>
 </div>
 </div>
@@ -16203,50 +16205,11 @@ memory usage: 23.2+ KB
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>If accurate, our model will offer invaluable insights to golf clubs, enabling them to devise strategies that address potential decreases in crowdedness. The results will emphasize the distinct factors influencing golf course crowdedness, pinpointing the crucial drivers of attendance. By understanding the relationships between golf court crowdedness and key seasonal factors, managers can optimize operational efficiency, heightening guest experiences and effectively mitigating potential attendance drops.</p>
-<p>Overall, our regression algorithm is poised to be an instrumental tool, not only in bolstering decision-making but also in proactively preventing low attendance at the golf club. This model further sets the stage for the development of advanced predictive mechanisms tailored for a variety of outdoor recreational pursuits, marking a transformative shift in the sports and recreation industry.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="5.3-Future-Question">5.3 Future Question<a class="anchor-link" href="#5.3-Future-Question">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This study might spark inquiries into how other meteorological factors or regional climate variations influence outdoor venues. Future research could also explore how different seasons impact various outdoor recreational activities and whether attendee preferences evolve based on changing climate patterns or technological advancements in sports facilities.</p>
+<p>Our model aims to provide golf clubs with insights into factors affecting crowdedness, enabling strategic responses to attendance fluctuations. By understanding the ties between seasonal factors and attendance, managers can enhance operational efficiency and guest experiences. This algorithm serves as a pivotal tool for informed decision-making and averting low attendance. Furthermore, it paves the way for predictive tools across outdoor recreational activities, signifying an evolution in the sports industry.</p>
 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
